@@ -1,0 +1,18 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{ float a=3.5; float x=-0.7;
+  float y, t;
+   if (a<=x)
+     {y=a+log(x+a);}
+   else {y=pow(sin(a*x),1/2);}
+   if (a>y)
+     {t=y/(a-x);}
+   else if (a==y)
+     {t=(y/(a-x))+((a+x)/pow(y,2));}
+   else {tan(a*x)+cos(2*a*y);}
+   cout <<"y = "<<y<<endl;
+   cout <<"t = "<<t<<endl;
+   return 0;
+}
