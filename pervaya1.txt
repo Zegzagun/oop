@@ -1,0 +1,9 @@
+#include <iostream>
+using namespace std;
+int main()
+{   string ima;
+    cout<<"Kak vas zovut? Vvedite ima: ";
+    cin>>ima;
+    cout<<"Dobriy den, "<<ima<<endl;
+    return 0;
+}

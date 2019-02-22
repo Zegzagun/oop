@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int main()
+{  float a, b, c;
+   cout<<"Vvedite a, b, c : ";
+   cin>>a;
+   cin>>b;
+   cin>>c;
+   a=3*b-5;
+   b=c-5*a;
+   c=2*b+a;
+   cout<<"\n";
+   cout<<" Teper a = "<<a;
+   cout<<" Teper b = "<<b;
+   cout<<" Teper c = "<<c;
+   return 0;
+}
