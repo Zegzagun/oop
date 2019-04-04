@@ -1,0 +1,37 @@
+#include <iostream>
+#include "stdlib.h"
+
+using namespace std;
+
+void fill(int **array,size_t Y,size_t X)
+{for(size_t i=0;i<Y;++i)
+  {for(size_t j=0;j<X;++j)
+    {array[i][j] = rand()%40+10;}
+  }
+}
+
+void print(int **array,size_t Y,size_t X)
+{for(size_t i=0;i<Y;++i)
+  {for(size_t j=0;j<X;++j)
+    {cout << array[i][j] << ' ';}
+     cout << endl;
+  }
+}
+
+int main()
+{ size_t Y, X;
+  cout << "Vvedite kol-vo strok i stolov cherez probel: ";
+  cin >> Y >> X;
+
+int **arr = new int*[Y];
+  for(size_t i=0;i<Y;++i)
+    {arr[i]= new int [X];}
+
+fill(arr,Y,X);
+print(arr,Y,X);
+
+ for(size_t i=0;i<Y;++i)
+    delete[] arr[i];
+    delete[] arr;
+}
+
