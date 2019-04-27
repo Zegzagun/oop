@@ -1,0 +1,58 @@
+#include <iostream>
+
+using namespace std;
+
+void buble(int* a, int n)
+{ for(int i=0; i<n; i++)
+    { for (int j=0; j<n-i-1; j++)
+      if (a[j] > a[j+1])
+      {int tmp1 = a[j];
+        a[j] = a[j+1];
+        a[j+1] = tmp1;}}
+
+ cout << " Massiv A: ";
+ for (int k=0; k<n; k++)
+   {cout <<"["<< a[k] << "]";}
+ cout <<"\n";
+}
+
+void buble(double* b, int n)
+{ for (int i=0; i<n; i++)
+    { for (int j=0; j<n-i-1; j++)
+      if (b[j] > b[j+1])
+      {double tmp2 = b[j];
+        b[j] = b[j+1];
+        b[j+1] = tmp2;}}
+
+ cout << " Massiv B: ";
+ for (int k=0; k<n; k++)
+   {cout <<"["<< b[k] << "]";}
+ cout <<"\n";
+}
+
+int main()
+{ int n1, n2;
+  int *a;
+  double *b;
+
+cout << " Vvedite razmer massiva A: ";
+cin >> n1;
+
+cout << " Vvedite razmer massiva B: ";
+cin >> n2;
+
+a = new int[n1];
+b = new double[n2];
+
+cout << " Vvedite massiv A: ";
+for(int i=0; i<n1; i++)
+  {cin >> a[i];}
+
+cout << " VVedite massiv B: ";
+for(int i=0; i<n2; i++)
+  {cin >> b[i];}
+
+buble(a,n1);
+buble(b,n2);
+
+return 0;}
