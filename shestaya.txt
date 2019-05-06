@@ -1,0 +1,126 @@
+#include <iostream>
+
+using namespace std;
+
+class Property
+{protected:
+
+int stoim;
+
+public:
+
+Property(int a)
+{stoim = a;}
+
+virtual double nalogg()
+{return 1000;}
+
+virtual void print()
+{cout << " Stoimost: " << stoim << endl;
+ cout << " Nalog: " << nalogg() << " rub" << endl;}
+};
+
+////////////////////////////
+
+class Appartment: public Property
+{public:
+
+Appartment(int a):Property(stoim)
+{stoim = a;}
+
+double nalogg()
+{int n = stoim*1/1000;
+ //cout << " Nalog na kvartiru: " << n << " rub" << endl;
+ return n;}
+
+void print()
+{cout << " Stoimost kvartiry: " << stoim << endl;
+ cout << " Nalog na kvartiru: " << nalogg() << " rub" << "\n" << endl;}
+};
+
+////////////////////////////
+
+class Car: public Property
+{public:
+
+Car(int c):Property(stoim)
+{stoim = c;}
+
+double nalogg()
+{int n = stoim*1/200;
+ //cout << " Nalog na mawinu: " << n << " rub" << endl;;
+ return n;}
+
+void print()
+{cout << " Stoimost mawiny: " << stoim << endl;
+ cout << " Nalog na mawinu: " << nalogg() << " rub" << "\n" << endl;}
+};
+
+////////////////////////////
+
+class CountryHouse: public Property
+{public:
+
+CountryHouse(int ch):Property(stoim)
+{stoim = ch;}
+
+double nalogg()
+{int n = stoim*1/500;
+ //cout << " Nalog na dom: " << n << " rub" << endl;;
+ return n;}
+
+void print()
+{cout << " Stoimost doma: " << stoim << endl;
+ cout << " Nalog na dom: " << nalogg() << " rub" << "\n" << endl;}
+};
+
+////////////////////////////
+
+int main()
+{ Property* AAA[7];
+int st1=1000;
+int st2=2000;
+int st3=3000;
+int st4=4000;
+int st5=5000;
+int st6=6000;
+int st7=7000;
+
+Appartment A(st1); A.print();
+Appartment B(st2); B.print();
+Appartment C(st3); C.print();
+
+Car D(st4); D.print();
+Car E(st5); E.print();
+
+CountryHouse F(st6); F.print();
+CountryHouse G(st7); G.print();
+
+AAA[0]=&A;
+AAA[1]=&B;
+AAA[2]=&C;
+AAA[3]=&D;
+AAA[4]=&E;
+AAA[5]=&F;
+AAA[6]=&G;
+
+/*
+A.nalogg();
+B.nalogg();
+C.nalogg();
+D.nalogg();
+E.nalogg();
+F.nalogg();
+G.nalogg();
+*/
+
+cout <<" Obwiy nalog: ";
+
+double NNN=0;
+for(int i=0; i<7; i++)
+  {NNN = NNN + AAA[i] -> nalogg();}
+
+cout << NNN << endl;
+
+return 0;
+}
