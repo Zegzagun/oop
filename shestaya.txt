@@ -78,6 +78,9 @@ void print()
 
 int main()
 { Property* AAA[7];
+int st1, st2, st3, st4, st5, st6, st7;
+
+/*
 int st1=1000;
 int st2=2000;
 int st3=3000;
@@ -85,6 +88,17 @@ int st4=4000;
 int st5=5000;
 int st6=6000;
 int st7=7000;
+*/
+
+cout << " Vvedite stoimost kvartiri 1: "; cin >> st1;
+cout << " Vvedite stoimost kvartiri 2: "; cin >> st2;
+cout << " Vvedite stoimost kvartiri 3: "; cin >> st3;
+
+cout << " Vvedite stoimost mawiny 1: "; cin >> st4;
+cout << " Vvedite stoimost mawiny 2: "; cin >> st5;
+
+cout << " Vvedite stoimost doma 1: "; cin >> st6;
+cout << " Vvedite stoimost doma 2: "; cin >> st7;
 
 Appartment A(st1); A.print();
 Appartment B(st2); B.print();
