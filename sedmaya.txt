@@ -1,0 +1,70 @@
+#include <string>
+#include <iostream>
+
+using namespace std;
+
+class Animal
+{protected:
+   string name;
+   int nogi;
+
+public:
+
+Animal(string nam)
+{name = nam;}
+
+virtual void Say() = 0;
+};
+
+///////////////////////
+
+class Dog : public Animal
+{public:
+
+Dog(string name) : Animal(name) {}
+int nogi = 4;
+
+void Say()
+  {cout << name << " speak gav-gav.";
+   cout << " U nee "<< nogi << " nogi." << endl;}
+};
+
+///////////////////////
+
+class Cat : public Animal
+{public:
+
+Cat(string name) : Animal(name) {}
+int nogi = 4;
+
+void Say()
+  {cout << name << " speak may-may.";
+   cout << " U nee "<< nogi << " nogi." << endl;}
+};
+
+///////////////////////
+
+class Bird : public Animal
+{public:
+
+Bird(string name) : Animal(name) {}
+int nogi = 2;
+
+void Say()
+  {cout << name << " speak kar-kar.";
+  cout << " U nee "<< nogi << " nogi." << endl;}
+};
+
+///////////////////////
+
+int main()
+{ Animal* ani[3];
+ani[0] = new Dog("Dog");
+ani[1] = new Cat("Cat");
+ani[2] = new Bird("Bird");
+
+for(int i=0; i<3; ++i)
+  {ani[i]->Say();}
+
+return 0;
+}
